@@ -1,0 +1,46 @@
+<h2>User Management</h2>
+
+<div *ngIf="message" class="message">{{ message }}</div>
+
+<div *ngIf="!isLoggedIn">
+  <h3>Register</h3>
+  <form (ngSubmit)="onRegister()">
+    <div>
+      <label for="registerFirstName">First Name:</label>
+      <input id="registerFirstName" [(ngModel)]="registerModel.firstName" name="firstName" required>
+    </div>
+    <div>
+      <label for="registerLastName">Last Name:</label>
+      <input id="registerLastName" [(ngModel)]="registerModel.lastName" name="lastName" required>
+    </div>
+    <div>
+      <label for="registerEmail">Email:</label>
+      <input id="registerEmail" type="email" [(ngModel)]="registerModel.email" name="email" required>
+    </div>
+    <div>
+      <label for="registerPassword">Password:</label>
+      <input id="registerPassword" type="password" [(ngModel)]="registerModel.password" name="password" required>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+
+  <h3>Login</h3>
+  <form (ngSubmit)="onLogin()">
+    <div>
+      <label for="loginEmail">Email:</label>
+      <input id="loginEmail" type="email" [(ngModel)]="loginModel.email" name="email" required>
+    </div>
+    <div>
+      <label for="loginPassword">Password:</label>
+      <input id="loginPassword" type="password" [(ngModel)]="loginModel.password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<div *ngIf="isLoggedIn">
+  <h3>Welcome, {{ profile?.firstName }} {{ profile?.lastName }}!</h3>
+  <p>Email: {{ profile?.email }}</p>
+  <p>Roles: {{ profile?.roles?.join(', ') }}</p>
+  <button (click)="onLogout()">Logout</button>
+</div>

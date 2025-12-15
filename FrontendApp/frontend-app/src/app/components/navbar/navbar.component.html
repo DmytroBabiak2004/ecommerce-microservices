@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span>E-commerce</span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isLoggedIn">
+    <button mat-button routerLink="/products">Products</button>
+    <button mat-button routerLink="/orders">Orders</button>
+    <button mat-icon-button routerLink="/cart">
+      <mat-icon matBadge="{{ cartItemCount$ | async }}" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </ng-container>
+  <ng-container *ngIf="!isLoggedIn">
+    <button mat-button routerLink="/login">Login</button>
+  </ng-container>
+</mat-toolbar>
