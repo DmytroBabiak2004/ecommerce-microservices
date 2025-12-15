@@ -1,0 +1,61 @@
+# Ignore build output and user-specific files
+bin/
+obj/
+out/
+
+# VS Code workspace settings
+.vscode/
+
+.vs/
+
+# Rider and Visual Studio settings
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Package dependencies
+**/packages/
+*.nupkg
+
+# Dotnet publish output
+publish/
+**/Publish/
+**/build/
+*.log
+
+# Entity Framework Migrations (unless you want to share them)
+migrations/
+Migrations/
+
+# Application secrets, config overrides
+secrets.json
+appsettings.*.local.json
+appsettings.Development.json
+
+# Docker artifacts
+*.pid
+*.db
+Dockerfile*
+docker-compose*.*
+
+# SQL Server data folders
+sqlserver_data/
+*.mdf
+*.ldf
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+
+# Other files/folders
+*.swp
+*.bak
+*.tmp
+*.tar.gz
+node_modules/
+coverage/
